@@ -9,7 +9,7 @@ const TodoNew = (props) => {
     // addNewTodo('huuthang');
     //  fire
     const handleClick = () => {
-        console.log('Check input >> ', valueInput);
+        addNewTodo(valueInput);
     };
     const handleOnChange = (name) => {
         setValueInput(name);
