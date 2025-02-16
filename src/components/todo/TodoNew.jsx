@@ -1,13 +1,31 @@
+import { useState } from 'react';
 const TodoNew = (props) => {
-    console.log('>> check point: ', props);
+    //  useState hook
+    // const valueInput = "";
+    const [valueInput, setValueInput] = useState();
 
     const { addNewTodo } = props;
 
-    // addNewTodo("huuthang");
+    // addNewTodo('huuthang');
+    //  fire
+    const handleClick = () => {
+        console.log('Check input >> ', valueInput);
+    };
+    const handleOnChange = (name) => {
+        setValueInput(name);
+    };
     return (
         <div className="todo-new">
-            <input type="text" name="" id="" />
-            <button>Add</button>
+            <input
+                type="text"
+                name=""
+                id=""
+                onChange={(event) => handleOnChange(event.target.value)}
+            />
+            <button style={{ cursor: 'pointer' }} onClick={handleClick}>
+                Add
+            </button>
+            <p>My text input is = {valueInput}</p>
         </div>
     );
 };
