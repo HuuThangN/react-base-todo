@@ -2,7 +2,7 @@ import { useState } from 'react';
 const TodoNew = (props) => {
     //  useState hook
     // const valueInput = "";
-    const [valueInput, setValueInput] = useState();
+    const [valueInput, setValueInput] = useState('huuthang');
 
     const { addNewTodo } = props;
 
@@ -10,6 +10,7 @@ const TodoNew = (props) => {
     //  fire
     const handleClick = () => {
         addNewTodo(valueInput);
+        setValueInput('');
     };
     const handleOnChange = (name) => {
         setValueInput(name);
@@ -21,11 +22,11 @@ const TodoNew = (props) => {
                 name=""
                 id=""
                 onChange={(event) => handleOnChange(event.target.value)}
+                value={valueInput}
             />
             <button style={{ cursor: 'pointer' }} onClick={handleClick}>
                 Add
             </button>
-            <p>My text input is = {valueInput}</p>
         </div>
     );
 };

@@ -1,5 +1,7 @@
 .todo-container {
     text-align: center;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .todo-title {
@@ -24,6 +26,11 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
 }
 
 .todo-image {
