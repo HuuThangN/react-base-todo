@@ -8,7 +8,6 @@ const RegisterPage = () => {
     const navigate = useNavigate();
 
     const onFinish = async (values) => {
-        console.log('check>>', values);
         const res = await registerUserAPI(
             values.fullName,
             values.email,
@@ -36,7 +35,9 @@ const RegisterPage = () => {
             onFinish={onFinish}
             // onFinishFailed={onFinishFailed}
             // autoComplete="off"
-            style={{ margin: '10px' }}
+            style={{
+                margin: '10px',
+            }}
         >
             <Row>
                 <Col span={12} offset={6}>
@@ -106,17 +107,21 @@ const RegisterPage = () => {
                     </Form.Item>
                 </Col>
             </Row>
-            <Button
-                onClick={() => form.submit()}
-                type="primary"
-                style={{
-                    font: '20px',
-                    fontWeight: '700',
-                    width: '100px',
-                }}
-            >
-                Register
-            </Button>
+            <Row>
+                <Col span={12} offset={6}>
+                    <Button
+                        onClick={() => form.submit()}
+                        type="primary"
+                        style={{
+                            font: '20px',
+                            fontWeight: '700',
+                            width: '100px',
+                        }}
+                    >
+                        Register
+                    </Button>
+                </Col>
+            </Row>
         </Form>
     );
 };
